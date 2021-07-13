@@ -37,19 +37,21 @@ let userNumberList = [];
 // riempiamo la lista delle 'bombe' con i numeri casuali
 
 
-while (bombList.length < 16) {
+// while (bombList.length < 16) {
  
-    var randomNumber = getRandomNumber(1, 100);
+//     var randomNumber = getRandomNumber(1, 100);
     
     
-        bombList.push(randomNumber);
+//         bombList.push(randomNumber);
     
     
 
-}
+// }
 
 while (bombList.length < 16) {
     var randomNumber = getRandomNumber(1, 100);
+
+    console.log(randomNumber);
 
     if (!bombList.includes(randomNumber)) {
         bombList.push(randomNumber);
