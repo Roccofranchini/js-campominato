@@ -33,6 +33,9 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 const bombNumber = 16;
 const max = 100;
 const min = 1;
+const range = max - bombNumber;
+
+
 let totalScore = 0;
 
 let bombList = [];
@@ -43,40 +46,36 @@ let userNumberList = [];
 
 while (bombList.length < 16) {
     var randomNumber = getRandomNumber(max, min);
-
+    
     if (!bombList.includes(randomNumber)) {
         bombList.push(randomNumber);
     }
 }
 
+console.log(bombList);
 
-// max - bombNumber DA SOSTITUIRE!!!!
+// controlliamo
 
-for ( i = 1; i <= 4; i++) {
+while (userNumberList.length < 4) {
+
     var userChoiche = prompt('scegli un numero da ' + min + ' a ' + max);
-
 
 
     if (!bombList.includes(userChoiche) && !userNumberList.includes(userChoiche)) {
         totalScore++;
         userNumberList.push(userChoiche);
     } else if (!bombList.includes(userChoiche) && userNumberList.includes(userChoiche)){
+        alert('Inserisci un numero diverso da quelli già inseriti!');
     } else {
         break;
     }
-    
+ 
 }
 
 console.log(userNumberList);
 
 console.log('hai perso, il tuo punteggio è : ' + totalScore);
 
-
-
-
-
-
-console.log(bombList);
 
 
 // funzione che genere numeri casuali
