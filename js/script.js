@@ -58,16 +58,29 @@ console.log(bombList);
 
 while (userNumberList.length < 4) {
 
-    var userChoiche = prompt('scegli un numero da ' + min + ' a ' + max);
+    var userChoiche = parseInt(prompt('scegli un numero da ' + min + ' a ' + max));
+    
+    console.log(userChoiche);
 
+    console.log(bombList.includes(userChoiche));
+    console.log(userNumberList.includes(userChoiche));
 
     if (!bombList.includes(userChoiche) && !userNumberList.includes(userChoiche)) {
         totalScore++;
         userNumberList.push(userChoiche);
+
+        console.log('vuoto');
+
+        
+
     } else if (!bombList.includes(userChoiche) && userNumberList.includes(userChoiche)){
         alert('Inserisci un numero diverso da quelli già inseriti!');
     } else {
+        console.log('sbagliato');
+
         break;
+
+
     }
  
 }
