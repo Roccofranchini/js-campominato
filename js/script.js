@@ -30,6 +30,10 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 
 
 //PREPARAZIONE
+const bombNumber = 16;
+const max = 100;
+const min = 1;
+let totalScore = 0;
 
 let bombList = [];
 let userNumberList = [];
@@ -37,27 +41,35 @@ let userNumberList = [];
 // riempiamo la lista delle 'bombe' con i numeri casuali
 
 
-// while (bombList.length < 16) {
- 
-//     var randomNumber = getRandomNumber(1, 100);
-    
-    
-//         bombList.push(randomNumber);
-    
-    
-
-// }
-
 while (bombList.length < 16) {
-    var randomNumber = getRandomNumber(1, 100);
-
-    console.log(randomNumber);
+    var randomNumber = getRandomNumber(max, min);
 
     if (!bombList.includes(randomNumber)) {
         bombList.push(randomNumber);
     }
 }
 
+
+// max - bombNumber DA SOSTITUIRE!!!!
+
+for ( i = 1; i <= 4; i++) {
+    var userChoiche = prompt('scegli un numero da ' + min + ' a ' + max);
+
+
+
+    if (!bombList.includes(userChoiche) && !userNumberList.includes(userChoiche)) {
+        totalScore++;
+        userNumberList.push(userChoiche);
+    } else if (!bombList.includes(userChoiche) && userNumberList.includes(userChoiche)){
+    } else {
+        break;
+    }
+    
+}
+
+console.log(userNumberList);
+
+console.log('hai perso, il tuo punteggio è : ' + totalScore);
 
 
 
@@ -71,5 +83,5 @@ console.log(bombList);
 
 function getRandomNumber(min, max,) {
 
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
