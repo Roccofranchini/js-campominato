@@ -28,25 +28,53 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 // 2 - punteggio
 
 
-
 //PREPARAZIONE
-const bombNumber = 16;
-const max = 100;
-const min = 1;
-const range = max - bombNumber;
-
+let bombNumber = 16;
+let max = 0;
+let min = 1;
+const display = document.getElementById('display');
+const display2 = document.getElementById('display2');
 
 let totalScore = 0;
 
 let bombList = [];
 let userNumberList = [];
+var difficulty = parseInt(prompt('DIFFICOLTÀ, scegli tra i diversi livelli di difficoltà digitando 0, 1 oppure 2'));
+
+
+// Difficoltà
+
+while (difficulty !== 0 && difficulty !== 1 && difficulty !== 2) {
+
+    difficulty = parseInt(prompt('DIFFICOLTÀ: scegli tra i diversi livelli di difficoltà digitando 0, 1 oppure 2'));
+
+}
+
+
+
+console.log(difficulty);
+console.log(typeof (difficulty));
+
+if (difficulty === 0) {
+    max = 100;
+} else if (difficulty === 1) {
+    max = 80;
+} else {
+    max = 50;
+}
+
+let range = max - bombNumber;
+
+console.log(range);
+console.log(max);
+
 
 // riempiamo la lista delle 'bombe' con i numeri casuali
 
 
-while (bombList.length < 16) {
+while (bombList.length < bombNumber) {
     var randomNumber = getRandomNumber(max, min);
-    
+
     if (!bombList.includes(randomNumber)) {
         bombList.push(randomNumber);
     }
@@ -56,10 +84,10 @@ console.log(bombList);
 
 // controlliamo
 
-while (userNumberList.length < 4) {
+while (userNumberList.length < range) {
 
     var userChoiche = parseInt(prompt('scegli un numero da ' + min + ' a ' + max));
-    
+
     console.log(userChoiche);
 
     console.log(bombList.includes(userChoiche));
@@ -71,9 +99,9 @@ while (userNumberList.length < 4) {
 
         console.log('vuoto');
 
-        
 
-    } else if (!bombList.includes(userChoiche) && userNumberList.includes(userChoiche)){
+
+    } else if (!bombList.includes(userChoiche) && userNumberList.includes(userChoiche)) {
         alert('Inserisci un numero diverso da quelli già inseriti!');
     } else {
         console.log('sbagliato');
@@ -82,12 +110,13 @@ while (userNumberList.length < 4) {
 
 
     }
- 
+
 }
 
 console.log(userNumberList);
 
-console.log('hai perso, il tuo punteggio è : ' + totalScore);
+display.innerHTML = 'hai perso, il tuo punteggio è : ' + totalScore;
+display2.innerHTML = 'DIFFICOLTÀ : ' + difficulty;
 
 
 
