@@ -124,7 +124,7 @@ display2.innerHTML = 'DIFFICOLTÀ : ' + difficulty;
 
 // funzione che genere numeri casuali
 
-function getRandomNumber(min, max,) {
+function getRandomNumber(min, max) {
 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
