@@ -50,10 +50,10 @@ while (difficulty !== 0 && difficulty !== 1 && difficulty !== 2) {
 
 }
 
-
-
 console.log(difficulty);
 console.log(typeof (difficulty));
+
+//  Livelli di difficoltà
 
 if (difficulty === 0) {
     max = 100;
@@ -114,6 +114,8 @@ while (userNumberList.length < range) {
 }
 
 console.log(userNumberList);
+
+// stampiamo punteggio e livello di difficoltà scelto
 
 display.innerHTML = 'hai perso, il tuo punteggio è : ' + totalScore;
 display2.innerHTML = 'DIFFICOLTÀ : ' + difficulty;
