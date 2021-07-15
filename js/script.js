@@ -29,7 +29,7 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 
 
 //PREPARAZIONE
-let bombNumber = 16;
+const bombNumber = 16;
 let max = 0;
 let min = 1;
 const display = document.getElementById('display');
@@ -37,9 +37,9 @@ const display2 = document.getElementById('display2');
 
 let totalScore = 0;
 
-let bombList = [];
-let userNumberList = [];
-var difficulty = parseInt(prompt('DIFFICOLTÀ, scegli tra i diversi livelli di difficoltà digitando 0, 1 oppure 2'));
+const bombList = [];
+const userNumberList = [];
+const difficulty = parseInt(prompt('DIFFICOLTÀ, scegli tra i diversi livelli di difficoltà digitando 0, 1 oppure 2'));
 
 
 // Difficoltà
