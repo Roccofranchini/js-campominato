@@ -117,7 +117,7 @@ console.log(userNumberList);
 
 // stampiamo punteggio e livello di difficoltà scelto
 
-display.innerHTML = 'hai perso, il tuo punteggio è : ' + totalScore;
+display.innerHTML = 'Partita finita, il tuo punteggio è : ' + totalScore;
 display2.innerHTML = 'DIFFICOLTÀ : ' + difficulty;
 
 
